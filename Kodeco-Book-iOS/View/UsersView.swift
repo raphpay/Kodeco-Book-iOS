@@ -23,14 +23,27 @@ struct UsersView: View {
             } else {
                 List {
                     ForEach(users) { user in
-                        Text(user.name)
-                            .font(.system(size: 18))
-                            .bold()
-                        Text(user.username)
-                            .font(.system(size: 15))
+                        VStack {
+                            Text(user.name)
+                                .font(.system(size: 18))
+                                .bold()
+                            Text(user.username)
+                                .font(.system(size: 15))
+                        }
                     }
                 }
             }
+        }
+        .onAppear {
+            Task { try await fetchUsers() }
+        }
+    }
+    
+    func fetchUsers() async throws {
+        let request = ResourceRequest<User>(resourcePath: "users")
+        let resources = try await request.getAll()
+        DispatchQueue.main.async {
+            self.users = resources
         }
     }
 }

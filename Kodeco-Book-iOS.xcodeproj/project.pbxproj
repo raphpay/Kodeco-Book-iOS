@@ -13,6 +13,7 @@
 		864A03D72B60FC88007AF7B7 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A03D62B60FC88007AF7B7 /* UsersView.swift */; };
 		864A03D92B60FD26007AF7B7 /* AcronymsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A03D82B60FD26007AF7B7 /* AcronymsView.swift */; };
 		864A03DB2B60FD74007AF7B7 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A03DA2B60FD74007AF7B7 /* CategoriesView.swift */; };
+		864A03DE2B60FEC2007AF7B7 /* ResourceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A03DD2B60FEC2007AF7B7 /* ResourceRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		864A03D62B60FC88007AF7B7 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		864A03D82B60FD26007AF7B7 /* AcronymsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymsView.swift; sourceTree = "<group>"; };
 		864A03DA2B60FD74007AF7B7 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		864A03DD2B60FEC2007AF7B7 /* ResourceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				864A03C82B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift */,
+				864A03DD2B60FEC2007AF7B7 /* ResourceRequest.swift */,
 				864A03DC2B60FDA3007AF7B7 /* View */,
 				864A03CC2B60FC0C007AF7B7 /* Assets.xcassets */,
 				864A03CE2B60FC0C007AF7B7 /* Preview Content */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				864A03D92B60FD26007AF7B7 /* AcronymsView.swift in Sources */,
+				864A03DE2B60FEC2007AF7B7 /* ResourceRequest.swift in Sources */,
 				864A03C92B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift in Sources */,
 				864A03DB2B60FD74007AF7B7 /* CategoriesView.swift in Sources */,
 				864A03D72B60FC88007AF7B7 /* UsersView.swift in Sources */,
