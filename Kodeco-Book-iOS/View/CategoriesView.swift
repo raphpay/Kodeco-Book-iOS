@@ -29,6 +29,17 @@ struct CategoriesView: View {
                 }
             }
         }
+        .onAppear {
+            Task { try await fetchCategories() }
+        }
+    }
+    
+    func fetchCategories() async throws {
+        let request = ResourceRequest<Category>(resourcePath: "categories")
+        let resources = try await request.getAll()
+        DispatchQueue.main.async {
+            self.categories = resources
+        }
     }
 }
 

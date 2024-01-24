@@ -25,7 +25,7 @@ struct ResourceRequest<ResourceType> where ResourceType: Codable {
     func getAll() async throws -> [ResourceType] {
         var resources: [ResourceType] = []
         
-        let (data, response) = try await URLSession.shared.data(from: resourceURL)
+        let (data, _) = try await URLSession.shared.data(from: resourceURL)
         
         do {
             resources = try JSONDecoder().decode([ResourceType].self, from: data)

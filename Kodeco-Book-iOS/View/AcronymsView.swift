@@ -23,15 +23,29 @@ struct AcronymsView: View {
             } else {
                 List {
                     ForEach(acronyms) { acronym in
-                        Text(acronym.short)
-                            .font(.system(size: 18))
-                            .bold()
-                        Text(acronym.long)
-                            .font(.system(size: 15))
+                        VStack(alignment: .leading) {
+                            Text(acronym.short)
+                                .font(.system(size: 18))
+                                .bold()
+                            Text(acronym.long)
+                                .font(.system(size: 15))
+                        }
                     }
                 }
             }
         }
+        .onAppear {
+            Task { try await fetchAcronyms() }
+        }
+    }
+    
+    func fetchAcronyms() async throws {
+        let request = ResourceRequest<Acronym>(resourcePath: "acronyms")
+        let resources = try await request.getAll()
+        DispatchQueue.main.async {
+            self.acronyms = resources
+        }
+
     }
 }
 

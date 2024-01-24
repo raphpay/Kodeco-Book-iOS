@@ -23,7 +23,7 @@ struct UsersView: View {
             } else {
                 List {
                     ForEach(users) { user in
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(user.name)
                                 .font(.system(size: 18))
                                 .bold()
