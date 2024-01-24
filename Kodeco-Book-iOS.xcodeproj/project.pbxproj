@@ -10,6 +10,10 @@
 		862305D92B6141090012D11D /* CreateAcronymView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305D82B6141090012D11D /* CreateAcronymView.swift */; };
 		862305DB2B6144980012D11D /* Acronym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305DA2B6144980012D11D /* Acronym.swift */; };
 		862305DD2B6146210012D11D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305DC2B6146210012D11D /* User.swift */; };
+		862305E02B6146560012D11D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305DF2B6146560012D11D /* Category.swift */; };
+		862305E22B6146690012D11D /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305E12B6146690012D11D /* RadioButton.swift */; };
+		862305E72B614EDC0012D11D /* AcronymDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305E62B614EDC0012D11D /* AcronymDetailView.swift */; };
+		862305E92B614F0B0012D11D /* AcronymRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305E82B614F0B0012D11D /* AcronymRequest.swift */; };
 		864A03C92B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A03C82B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift */; };
 		864A03CD2B60FC0C007AF7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864A03CC2B60FC0C007AF7B7 /* Assets.xcassets */; };
 		864A03D02B60FC0C007AF7B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864A03CF2B60FC0C007AF7B7 /* Preview Assets.xcassets */; };
@@ -24,6 +28,10 @@
 		862305D82B6141090012D11D /* CreateAcronymView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAcronymView.swift; sourceTree = "<group>"; };
 		862305DA2B6144980012D11D /* Acronym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acronym.swift; sourceTree = "<group>"; };
 		862305DC2B6146210012D11D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		862305DF2B6146560012D11D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		862305E12B6146690012D11D /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		862305E62B614EDC0012D11D /* AcronymDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymDetailView.swift; sourceTree = "<group>"; };
+		862305E82B614F0B0012D11D /* AcronymRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRequest.swift; sourceTree = "<group>"; };
 		864A03C52B60FC0A007AF7B7 /* Kodeco-Book-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kodeco-Book-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		864A03C82B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kodeco_Book_iOSApp.swift; sourceTree = "<group>"; };
 		864A03CC2B60FC0C007AF7B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,9 +58,37 @@
 			isa = PBXGroup;
 			children = (
 				862305DA2B6144980012D11D /* Acronym.swift */,
+				862305DF2B6146560012D11D /* Category.swift */,
 				862305DC2B6146210012D11D /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		862305E32B6146710012D11D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				862305E12B6146690012D11D /* RadioButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		862305E42B6146940012D11D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				864A03D62B60FC88007AF7B7 /* UsersView.swift */,
+				864A03D82B60FD26007AF7B7 /* AcronymsView.swift */,
+				864A03DA2B60FD74007AF7B7 /* CategoriesView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		862305E52B6146990012D11D /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				864A03DF2B61041D007AF7B7 /* CreateUserView.swift */,
+				862305D82B6141090012D11D /* CreateAcronymView.swift */,
+			);
+			path = Creation;
 			sourceTree = "<group>";
 		};
 		864A03BC2B60FC0A007AF7B7 = {
@@ -95,11 +131,10 @@
 		864A03DC2B60FDA3007AF7B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				864A03D62B60FC88007AF7B7 /* UsersView.swift */,
-				864A03DF2B61041D007AF7B7 /* CreateUserView.swift */,
-				864A03D82B60FD26007AF7B7 /* AcronymsView.swift */,
-				862305D82B6141090012D11D /* CreateAcronymView.swift */,
-				864A03DA2B60FD74007AF7B7 /* CategoriesView.swift */,
+				862305E42B6146940012D11D /* Main */,
+				862305E52B6146990012D11D /* Creation */,
+				862305E32B6146710012D11D /* Components */,
+				862305E62B614EDC0012D11D /* AcronymDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				864A03DD2B60FEC2007AF7B7 /* ResourceRequest.swift */,
+				862305E82B614F0B0012D11D /* AcronymRequest.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -182,10 +218,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862305E22B6146690012D11D /* RadioButton.swift in Sources */,
 				864A03D92B60FD26007AF7B7 /* AcronymsView.swift in Sources */,
+				862305E02B6146560012D11D /* Category.swift in Sources */,
 				862305DB2B6144980012D11D /* Acronym.swift in Sources */,
 				864A03E02B61041D007AF7B7 /* CreateUserView.swift in Sources */,
 				864A03DE2B60FEC2007AF7B7 /* ResourceRequest.swift in Sources */,
+				862305E72B614EDC0012D11D /* AcronymDetailView.swift in Sources */,
+				862305E92B614F0B0012D11D /* AcronymRequest.swift in Sources */,
 				862305D92B6141090012D11D /* CreateAcronymView.swift in Sources */,
 				862305DD2B6146210012D11D /* User.swift in Sources */,
 				864A03C92B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift in Sources */,

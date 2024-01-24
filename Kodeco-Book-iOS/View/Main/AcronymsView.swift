@@ -19,13 +19,18 @@ struct AcronymsView: View {
                 } else {
                     List {
                         ForEach(acronyms) { acronym in
-                            VStack(alignment: .leading) {
-                                Text(acronym.short)
-                                    .font(.system(size: 18))
-                                    .bold()
-                                Text(acronym.long)
-                                    .font(.system(size: 15))
+                            NavigationLink {
+                                AcronymDetailView(acronym: acronym)
+                            } label: {
+                                VStack(alignment: .leading) {
+                                    Text(acronym.short)
+                                        .font(.system(size: 18))
+                                        .bold()
+                                    Text(acronym.long)
+                                        .font(.system(size: 15))
+                                }
                             }
+
                         }
                     }
                 }

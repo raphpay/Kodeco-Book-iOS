@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct Category: Identifiable, Codable {
-    var id: UUID?
-    var name: String
-}
-
 struct CategoriesView: View {
     @State private var categories: [Category] = []
     
