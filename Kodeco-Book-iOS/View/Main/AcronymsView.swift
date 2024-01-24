@@ -30,7 +30,14 @@ struct AcronymsView: View {
                                         .font(.system(size: 15))
                                 }
                             }
-
+                        }
+                        .onDelete { indexSet in
+                            for index in indexSet {
+                                Task {
+                                    guard let acronymID = acronyms[index].id else { return }
+                                    try await AcronymRequest(acronymID: acronymID).delete()
+                                }
+                            }
                         }
                     }
                 }
@@ -60,7 +67,6 @@ struct AcronymsView: View {
         DispatchQueue.main.async {
             self.acronyms = resources
         }
-
     }
 }
 

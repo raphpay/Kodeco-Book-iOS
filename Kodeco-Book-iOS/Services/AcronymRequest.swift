@@ -84,4 +84,16 @@ struct AcronymRequest {
         
         return acronym
     }
+    
+    // MARK: - Delete
+    func delete() async throws {
+        var urlRequest = URLRequest(url: resourceURL)
+        urlRequest.httpMethod = "DELETE"
+        
+        do {
+            let (_, _) = try await URLSession.shared.data(for: urlRequest)
+        } catch {
+            throw ResourceRequestError.noData
+        }
+    }
 }
