@@ -15,9 +15,10 @@ struct User: Identifiable, Codable {
 
 struct UsersView: View {
     @State private var users: [User] = []
+    @State private var showCreateView = false
     
     var body: some View {
-        NavigationStack {
+        VStack {
             if users.isEmpty {
                 ContentUnavailableView("No users yet", systemImage: "person.2", description: Text("Create one over here"))
             } else {
@@ -33,6 +34,19 @@ struct UsersView: View {
                     }
                 }
             }
+        }
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    showCreateView = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+
+            }
+        }
+        .navigationDestination(isPresented: $showCreateView) {
+            CreateUserView(showCreateView: $showCreateView)
         }
         .onAppear {
             Task { try await fetchUsers() }

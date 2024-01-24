@@ -8,7 +8,7 @@
 import Foundation
 
 enum ResourceRequestError: Error {
-    case noData, decodingError
+    case noData, decodingError, encodingError
 }
 
 struct ResourceRequest<ResourceType> where ResourceType: Codable {
@@ -21,7 +21,23 @@ struct ResourceRequest<ResourceType> where ResourceType: Codable {
         }
         self.resourceURL = resourceURL.appendingPathComponent(resourcePath)
     }
+    
+    // MARK: - Create
+    func save<CreateType>(_ saveData: CreateType) async throws -> ResourceType? where CreateType: Codable {
+        var createdResource: ResourceType?
+        
+        var urlRequest = URLRequest(url: resourceURL)
+        urlRequest.httpMethod = "POST"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = try JSONEncoder().encode(saveData)
+        
+        let (data, _) = try await URLSession.shared.data(for: urlRequest)
+        createdResource = try JSONDecoder().decode(ResourceType.self, from: data)
+        
+        return createdResource
+    }
 
+    // MARK: - Read
     func getAll() async throws -> [ResourceType] {
         var resources: [ResourceType] = []
         
