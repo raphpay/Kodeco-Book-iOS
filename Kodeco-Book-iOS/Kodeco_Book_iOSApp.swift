@@ -11,23 +11,21 @@ import SwiftUI
 struct Kodeco_Book_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                TabView {
-                    UsersView()
-                        .tabItem {
-                            Label("Users", systemImage: "person.2")
-                        }
-                    
-                    AcronymsView()
-                        .tabItem {
-                            Label("Acronyms", systemImage: "character.magnify")
-                        }
-                    
-                    CategoriesView()
-                        .tabItem {
-                            Label("Categories", systemImage: "tag")
-                        }
-                }
+            TabView {
+                UsersView()
+                    .tabItem {
+                        Label("Users", systemImage: "person.2")
+                    }
+                
+                AcronymsView()
+                    .tabItem {
+                        Label("Acronyms", systemImage: "character.magnify")
+                    }
+                
+                CategoriesView()
+                    .tabItem {
+                        Label("Categories", systemImage: "tag")
+                    }
             }
         }
     }

@@ -7,35 +7,45 @@
 
 import SwiftUI
 
-struct Acronym: Identifiable, Codable {
-    var id: UUID?
-    var short: String
-    var long: String
-}
-
 struct AcronymsView: View {
     @State private var acronyms: [Acronym] = []
+    @State private var showCreateView = false
     
     var body: some View {
         NavigationStack {
-            if acronyms.isEmpty {
-                ContentUnavailableView("No acronyms yet", systemImage: "character.magnify", description: Text("Create one over here"))
-            } else {
-                List {
-                    ForEach(acronyms) { acronym in
-                        VStack(alignment: .leading) {
-                            Text(acronym.short)
-                                .font(.system(size: 18))
-                                .bold()
-                            Text(acronym.long)
-                                .font(.system(size: 15))
+            ZStack {
+                if acronyms.isEmpty {
+                    ContentUnavailableView("No acronyms yet", systemImage: "character.magnify", description: Text("Create one over here"))
+                } else {
+                    List {
+                        ForEach(acronyms) { acronym in
+                            VStack(alignment: .leading) {
+                                Text(acronym.short)
+                                    .font(.system(size: 18))
+                                    .bold()
+                                Text(acronym.long)
+                                    .font(.system(size: 15))
+                            }
                         }
                     }
                 }
             }
-        }
-        .onAppear {
-            Task { try await fetchAcronyms() }
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        showCreateView = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+
+                }
+            }
+            .navigationDestination(isPresented: $showCreateView, destination: {
+                CreateAcronymView(showCreateView: $showCreateView)
+            })
+            .onAppear {
+                Task { try await fetchAcronyms() }
+            }
         }
     }
     

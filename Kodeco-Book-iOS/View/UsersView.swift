@@ -7,49 +7,45 @@
 
 import SwiftUI
 
-struct User: Identifiable, Codable {
-    var id: UUID?
-    var name: String
-    var username: String
-}
-
 struct UsersView: View {
     @State private var users: [User] = []
     @State private var showCreateView = false
     
     var body: some View {
-        VStack {
-            if users.isEmpty {
-                ContentUnavailableView("No users yet", systemImage: "person.2", description: Text("Create one over here"))
-            } else {
-                List {
-                    ForEach(users) { user in
-                        VStack(alignment: .leading) {
-                            Text(user.name)
-                                .font(.system(size: 18))
-                                .bold()
-                            Text(user.username)
-                                .font(.system(size: 15))
+        NavigationStack {
+            ZStack {
+                if users.isEmpty {
+                    ContentUnavailableView("No users yet", systemImage: "person.2", description: Text("Create one over here"))
+                } else {
+                    List {
+                        ForEach(users) { user in
+                            VStack(alignment: .leading) {
+                                Text(user.name)
+                                    .font(.system(size: 18))
+                                    .bold()
+                                Text(user.username)
+                                    .font(.system(size: 15))
+                            }
                         }
                     }
                 }
             }
-        }
-        .toolbar {
-            ToolbarItem {
-                Button {
-                    showCreateView = true
-                } label: {
-                    Image(systemName: "plus")
-                }
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        showCreateView = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
 
+                }
             }
-        }
-        .navigationDestination(isPresented: $showCreateView) {
-            CreateUserView(showCreateView: $showCreateView)
-        }
-        .onAppear {
-            Task { try await fetchUsers() }
+            .navigationDestination(isPresented: $showCreateView) {
+                CreateUserView(showCreateView: $showCreateView)
+            }
+            .onAppear {
+                Task { try await fetchUsers() }
+            }
         }
     }
     
