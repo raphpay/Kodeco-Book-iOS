@@ -14,6 +14,7 @@
 		862305E22B6146690012D11D /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305E12B6146690012D11D /* RadioButton.swift */; };
 		862305E72B614EDC0012D11D /* AcronymDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305E62B614EDC0012D11D /* AcronymDetailView.swift */; };
 		862305E92B614F0B0012D11D /* AcronymRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305E82B614F0B0012D11D /* AcronymRequest.swift */; };
+		862305ED2B6159B60012D11D /* CreateCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862305EC2B6159B60012D11D /* CreateCategoryView.swift */; };
 		864A03C92B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A03C82B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift */; };
 		864A03CD2B60FC0C007AF7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864A03CC2B60FC0C007AF7B7 /* Assets.xcassets */; };
 		864A03D02B60FC0C007AF7B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864A03CF2B60FC0C007AF7B7 /* Preview Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		862305E12B6146690012D11D /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		862305E62B614EDC0012D11D /* AcronymDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymDetailView.swift; sourceTree = "<group>"; };
 		862305E82B614F0B0012D11D /* AcronymRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRequest.swift; sourceTree = "<group>"; };
+		862305EC2B6159B60012D11D /* CreateCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryView.swift; sourceTree = "<group>"; };
 		864A03C52B60FC0A007AF7B7 /* Kodeco-Book-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kodeco-Book-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		864A03C82B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kodeco_Book_iOSApp.swift; sourceTree = "<group>"; };
 		864A03CC2B60FC0C007AF7B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,8 +89,27 @@
 			children = (
 				864A03DF2B61041D007AF7B7 /* CreateUserView.swift */,
 				862305D82B6141090012D11D /* CreateAcronymView.swift */,
+				862305EC2B6159B60012D11D /* CreateCategoryView.swift */,
 			);
 			path = Creation;
+			sourceTree = "<group>";
+		};
+		862305EA2B6159950012D11D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				862305E62B614EDC0012D11D /* AcronymDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		862305EB2B61599D0012D11D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				862305E42B6146940012D11D /* Main */,
+				862305E52B6146990012D11D /* Creation */,
+				862305EA2B6159950012D11D /* Detail */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		864A03BC2B60FC0A007AF7B7 = {
@@ -131,10 +152,8 @@
 		864A03DC2B60FDA3007AF7B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				862305E42B6146940012D11D /* Main */,
-				862305E52B6146990012D11D /* Creation */,
+				862305EB2B61599D0012D11D /* Screens */,
 				862305E32B6146710012D11D /* Components */,
-				862305E62B614EDC0012D11D /* AcronymDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +239,7 @@
 			files = (
 				862305E22B6146690012D11D /* RadioButton.swift in Sources */,
 				864A03D92B60FD26007AF7B7 /* AcronymsView.swift in Sources */,
+				862305ED2B6159B60012D11D /* CreateCategoryView.swift in Sources */,
 				862305E02B6146560012D11D /* Category.swift in Sources */,
 				862305DB2B6144980012D11D /* Acronym.swift in Sources */,
 				864A03E02B61041D007AF7B7 /* CreateUserView.swift in Sources */,
