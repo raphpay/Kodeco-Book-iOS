@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UsersView: View {
+    @EnvironmentObject private var authProvider: AuthProvider
     @State private var users: [User] = []
     @State private var showCreateView = false
     
@@ -36,6 +37,14 @@ struct UsersView: View {
                         showCreateView = true
                     } label: {
                         Image(systemName: "plus")
+                    }
+
+                }
+                ToolbarItem {
+                    Button {
+                        authProvider.logout()
+                    } label: {
+                        Image(systemName: "door.right.hand.open")
                     }
 
                 }
