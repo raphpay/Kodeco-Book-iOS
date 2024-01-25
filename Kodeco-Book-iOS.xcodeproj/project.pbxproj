@@ -142,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				864A03C82B60FC0A007AF7B7 /* Kodeco_Book_iOSApp.swift */,
-				8652F61A2B6268470061C7C5 /* AuthProvider.swift */,
 				862305DE2B61462D0012D11D /* Models */,
 				864A03E12B61059C007AF7B7 /* Services */,
 				864A03DC2B60FDA3007AF7B7 /* View */,
@@ -172,6 +171,7 @@
 		864A03E12B61059C007AF7B7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8652F61A2B6268470061C7C5 /* AuthProvider.swift */,
 				864A03DD2B60FEC2007AF7B7 /* ResourceRequest.swift */,
 				862305E82B614F0B0012D11D /* AcronymRequest.swift */,
 				8652F6142B6264A90061C7C5 /* Auth.swift */,

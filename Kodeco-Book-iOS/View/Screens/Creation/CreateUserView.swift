@@ -10,6 +10,7 @@ import SwiftUI
 struct CreateUserView: View {
     @State private var name = ""
     @State private var username = ""
+    @State private var password = ""
     @Binding var showCreateView: Bool
     
     var body: some View {
@@ -22,6 +23,8 @@ struct CreateUserView: View {
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
             
+            SecureField("Password", text: $password)
+            
             Button {
                 Task { try await save() }
             } label: {
@@ -32,8 +35,8 @@ struct CreateUserView: View {
     
     func save() async throws {
         let request = ResourceRequest<User>(resourcePath: "users")
-        let user = User(name: name, username: username)
-        let createdResource = try await request.save(user)
+        let userData = CreateUserData(name: name, username: username, password: password)
+        let createdResource = try await request.save(userData)
         if createdResource != nil { showCreateView = false }
     }
 }

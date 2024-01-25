@@ -26,9 +26,12 @@ struct ResourceRequest<ResourceType> where ResourceType: Codable {
     func save<CreateType>(_ saveData: CreateType) async throws -> ResourceType? where CreateType: Codable {
         var createdResource: ResourceType?
         
+        guard let token = Auth.shared.token else { return createdResource }
+        
         var urlRequest = URLRequest(url: resourceURL)
         urlRequest.httpMethod = "POST"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.httpBody = try JSONEncoder().encode(saveData)
         
         let (data, _) = try await URLSession.shared.data(for: urlRequest)
@@ -51,5 +54,4 @@ struct ResourceRequest<ResourceType> where ResourceType: Codable {
         
         return resources
     }
-
 }
